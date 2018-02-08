@@ -21,7 +21,7 @@ import './css/general.css';
 
 Amplify.configure(awsmobile);
 
-require('file-loader?name=[name].[ext]!./index.html');
+require('file-loader?name=[name].[ext]./index.html');
 require("babel-core/register");
 require("babel-polyfill");
 

@@ -7,17 +7,15 @@ See the License for the specific language governing permissions and limitations 
 */
 
 import React, { Component } from 'react';
-import Home from './Home';
-import Menu from './API/Menu';
-import Orders from './API/Order';
+import App from './App';
 import Login from './Auth/Login';
 import AppRoute from './index';
 import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
-import { Button, Card, Row, Col, Navbar, NavItem } from 'react-materialize';
 import './css/general.css';
 import { Config, CognitoIdentityCredentials } from 'aws-sdk';
 import awsmobile from './aws-exports';
 import {Auth} from 'aws-amplify';
+
 
 export default class Main extends Component {
 
@@ -47,9 +45,7 @@ export default class Main extends Component {
                 !logOut && (
                   <BrowserRouter>
                     <div>
-                      <Navbar className='nav-bar' brand='WebApp' right>
-                        <NavItem onClick={this.signOut}>Logout</NavItem>
-                      </Navbar>
+                        <button onClick={this.signOut}>Logout</button>
                       <App/>
                     </div>
                   </BrowserRouter>
