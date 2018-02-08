@@ -43,34 +43,22 @@ export default class Main extends Component {
         const { logOut } = this.state;
         return (
             <div>
-                {
-                    !logOut && (
-                    <BrowserRouter>
-                        <div>
-                            <Navbar className='nav-bar' brand='WebApp' right>
-                                <NavItem><Link to="/main/home">Home</Link></NavItem>
-                                <NavItem><Link to="/main/menus">Menu</Link></NavItem>
-                                <NavItem><Link to="/main/orders">Orders</Link></NavItem>
-                                <NavItem onClick={this.signOut}>Logout</NavItem>
-                            </Navbar>
-                            <div className="content">
-                                <h2>Serverless Restaurants App</h2>
-                                <h4>Welcome to the order system!</h4>
-                            </div>
-                            <Switch>
-                                <Route exact path="/main" component={Home} />
-                                <Route exact path="/main/home" component={Home} />
-                                <Route exact path="/main/menus/:id" component={Menu} />
-                                <Route exact path="/main/menus" component={Menu} />
-                                <Route exact path="/main/orders" component={Orders} />
-                            </Switch>
-                        </div>
-                    </BrowserRouter>)
-                }
-                {
-                    logOut && (<AppRoute authStatus={false}/>)
-                }
+              {
+                !logOut && (
+                  <BrowserRouter>
+                    <div>
+                      <Navbar className='nav-bar' brand='WebApp' right>
+                        <NavItem onClick={this.signOut}>Logout</NavItem>
+                      </Navbar>
+                      <App/>
+                    </div>
+                  </BrowserRouter>
+                )
+              }
+              {
+                logOut && (<AppRoute authStatus={false}/>)
+              }
             </div>
-        );
+          );
     }
 }
