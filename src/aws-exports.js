@@ -25,10 +25,14 @@ const awsmobile = {
     'aws_resource_bucket_name': 'wallet-deployments-mobilehub-742885805',
     'aws_resource_name_prefix': 'wallet-mobilehub-742885805',
     'aws_sign_in_enabled': 'enable',
+    'aws_user_files': 'enable',
+    'aws_user_files_s3_bucket': 'wallet-userfiles-mobilehub-742885805',
+    'aws_user_files_s3_bucket_region': 'us-east-1',
     'aws_user_pools': 'enable',
     'aws_user_pools_id': 'us-east-1_fj27QUYK3',
     'aws_user_pools_mfa_type': 'ON',
     'aws_user_pools_web_client_id': '59bese1jgb75r1946a1qpbk9p4',
+    'aws_user_settings': 'enable',
 }
 
 export default awsmobile;
